@@ -7,7 +7,6 @@ class Solution:
         if i==1:
           dists.append(dist)
           dist=0
-      print(dists)
       for j in dists[1:]:
         if j<k: return False
       return True
