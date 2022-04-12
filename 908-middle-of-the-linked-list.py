@@ -13,10 +13,7 @@ def ll_len(ll):
 
 class Solution:
         def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-          length=ll_len(head)
-          if length%2==0: length=(length//2)
-          else: length=length//2
-
+          length=ll_len(head)//2
           ptr=head
           for i in range(length): ptr=ptr.next
           return ptr
