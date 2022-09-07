@@ -7,7 +7,6 @@ class Solution(object):
         if i in punctuation: 
           if para[-1]!="": para.append("")
         else: para[-1]=para[-1]+i
-      print(para)
       cts={}
       for j in para:
         if j not in banned and j!="":
