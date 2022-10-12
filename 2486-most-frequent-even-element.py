@@ -6,7 +6,7 @@ class Solution:
       for i in nums:
         iCt=nums.count(i)
         if iCt>maxCt:
-          maxCt=nums.count(i)
+          maxCt=iCt
           mins=[i]
         if iCt==maxCt:
           mins.append(i)
