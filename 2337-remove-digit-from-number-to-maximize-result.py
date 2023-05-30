@@ -1,6 +1,6 @@
 class Solution:
     def removeDigit(self, number: str, digit: str) -> str:
-        number,m=number,0
+        m=0
         for i in range(len(number)):
             if number[i]==digit:
                 wo=number[:i]+number[i+1:]
