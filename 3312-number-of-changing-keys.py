@@ -1,8 +1,8 @@
 class Solution:
     def countKeyChanges(self, s: str) -> int:
         s=s.lower()
-        prev,ct=s[0],0
+        last,ct=s[0],0
         for i in s:
-            if i!=prev:ct+=1
-            prev=i
+            if i!=last: ct+=1
+            last=i
         return ct
