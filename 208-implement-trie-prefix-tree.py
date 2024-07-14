@@ -10,9 +10,7 @@ class Trie:
         return word in self.words
 
     def startsWith(self, prefix: str) -> bool:
-        for i in self.words:
-            if i.startswith(prefix): return True
-        return False
+        return any(i.startswith(prefix) for i in self.words)
 
 
 # Your Trie object will be instantiated and called as such:
