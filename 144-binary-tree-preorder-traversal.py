@@ -5,13 +5,12 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def helperPreorder(self, root: Optional[TreeNode], arr) -> List[int]:
-      if root==None: return
-      arr.append(root.val)
-      self.helperPreorder(root.left, arr)
-      self.helperPreorder(root.right, arr)
-      return arr
-
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-      if root == None: return []
-      return self.helperPreorder(root, [])
+        if not root: return []
+        stack,vals=[root],[]
+        while stack:
+            last=stack.pop()
+            vals.append(last.val)
+            if last.right: stack.append(last.right)
+            if last.left: stack.append(last.left)
+        return vals
