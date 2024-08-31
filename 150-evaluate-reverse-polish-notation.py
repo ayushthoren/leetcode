@@ -9,4 +9,4 @@ class Solution:
           stack=stack[:-2]
           stack.append(new)
         else: stack.append(i)
-      return stack[0]
+      return int(stack[0])
