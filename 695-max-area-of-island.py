@@ -21,7 +21,6 @@ class Solution:
                         grid[stack[-1][1]][stack[-1][0]]=0
                         areas[-1]+=1
                         stack.pop(-1)
-                        # stack.extend(adj)
                         for i in adj:
                             if i not in stack: stack.append(i)
         return max(areas) if areas else 0
