@@ -8,6 +8,5 @@ class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         def helper(node):
             if not node: return None
-            new=TreeNode(node.val,helper(node.right),helper(node.left))
-            return new
+            return TreeNode(node.val,helper(node.right),helper(node.left))
         return helper(root)
