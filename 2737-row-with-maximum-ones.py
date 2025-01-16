@@ -1,7 +1,7 @@
 class Solution:
     def rowAndMaximumOnes(self, mat: List[List[int]]) -> List[int]:
-        m=[]
+        p=m=0
         for i in range(len(mat)):
-            ct=mat[i].count(1)
-            if not m or ct>m[1]: m=[i,ct]
-        return m
+            c=mat[i].count(1)
+            if c>m: m=c; p=i
+        return [p,m]
