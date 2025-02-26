@@ -12,7 +12,7 @@ class Solution:
             d+=1
             new=[]
             for i in q:
+                if not i.left and not i.right: return d
                 if i.left: new.append(i.left)
                 if i.right: new.append(i.right)
-                if not i.left and not i.right: return d
             q=new
