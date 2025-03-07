@@ -6,9 +6,11 @@ class Solution:
                 if n%d==0: return False
             return True
 
-        primes,ct=[],0
-        for i in range(left,right+1):
-            if i%2==0 and i>2: continue
+        primes,ct,step=[],0,1
+        if left<2: primes.append(2)
+        if left%2==1: step=2
+        else: left+=1
+        for i in range(left,right+1,step):
             if prime(i):
                 if primes and i-primes[-1]<=2: return [primes[-1],i]
                 primes.append(i); ct+=1
