@@ -7,10 +7,10 @@ class Solution:
             return True
 
         primes,ct,step=[],0,1
-        if left<2: primes.append(2)
-        if left%2==1: step=2
-        else: left+=1
-        for i in range(left,right+1,step):
+        r=[2] if left<=2 else []
+        if left%2==0: left+=1
+        r.extend(range(left,right+1,2))
+        for i in r:
             if prime(i):
                 if primes and i-primes[-1]<=2: return [primes[-1],i]
                 primes.append(i); ct+=1
