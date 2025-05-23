@@ -1,5 +1,7 @@
 class Solution:
     def transformArray(self, nums: List[int]) -> List[int]:
-        e=sum(i%2==0 for i in nums)
-        nums[:e],nums[e:]=[0]*e,[1]*(len(nums)-e)
+        p=0
+        for i in nums:
+            if i%2==0: nums[p]=0; p+=1
+        for j in range(p,len(nums)): nums[j]=1
         return nums
