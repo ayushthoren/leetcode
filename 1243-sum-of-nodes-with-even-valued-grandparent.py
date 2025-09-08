@@ -7,13 +7,11 @@
 class Solution:
     def sumEvenGrandparent(self, root: Optional[TreeNode]) -> int:
         if not root: return 0
-        root.parent = None
-        q, v = [root], []
+        q, s = deque([(root, False, False)]), 0
         while q:
-            new = []
-            for i in q:
-                if i.parent and i.parent.parent and i.parent.parent.val % 2 == 0: v.append(i.val)
-                if i.left: i.left.parent = i; new.append(i.left)
-                if i.right: i.right.parent = i; new.append(i.right)
-            q = new
-        return sum(v)
+            n, pe, ge = q.popleft()
+            if ge: s += n.val
+            e = n.val % 2 == 0
+            if n.left: q.append((n.left, e, pe))
+            if n.right: q.append((n.right, e, pe))
+        return s
