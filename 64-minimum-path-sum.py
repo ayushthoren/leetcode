@@ -1,11 +1,9 @@
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
-        for row in range(len(grid)):
-            for col in range(len(grid[row])):
-                possible=[]
-                #possible paths
-                if row>0: possible.append(grid[row-1][col])
-                if col>0: possible.append(grid[row][col-1])
-                #Find best path
-                if possible: grid[row][col]=grid[row][col]+min(possible)
+        for y in range(len(grid)):
+            for x in range(len(grid[0])):
+                if y == 0 and x == 0: continue
+                elif y == 0: grid[y][x] += grid[y][x-1]
+                elif x == 0: grid[y][x] += grid[y-1][x]
+                else: grid[y][x] += min(grid[y][x-1], grid[y-1][x])
         return grid[-1][-1]
