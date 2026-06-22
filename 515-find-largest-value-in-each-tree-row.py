@@ -7,13 +7,15 @@
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
         if not root: return []
-        q,vals=[root],[]
+        q, o = [root], []
+
         while q:
-            new,tmp=[],None
+            n, m = [], None
             for i in q:
-                if i.left: new.append(i.left)
-                if i.right: new.append(i.right)
-                if tmp==None or i.val>tmp: tmp=i.val
-            q=new
-            vals.append(tmp)
-        return vals
+                if i.left: n.append(i.left)
+                if i.right: n.append(i.right)
+                if m == None or i.val > m: m = i.val
+            o.append(m)
+            q = n
+
+        return o
