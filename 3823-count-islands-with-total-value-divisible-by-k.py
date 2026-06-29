@@ -2,7 +2,7 @@ class Solution:
     def countIslands(self, grid: List[List[int]], k: int) -> int:
         def island(y, x):
             s = 0
-            q = deque([(y, x)])
+            q = deque()
 
             def zero(y, x):
                 s = grid[y][x]
